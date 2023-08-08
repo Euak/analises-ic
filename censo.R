@@ -65,6 +65,11 @@ df.join %>%
 df.join %>% 
   group_by(concluiu_medio, a_ponderacao) %>% 
   summarise("qtde" = n()) %>% 
+  View()
+
+df.join %>% 
+  group_by(concluiu_medio, a_ponderacao) %>% 
+  summarise("qtde" = n()) %>% 
   filter(concluiu_medio == 0) %>% 
   ggplot(aes(qtde)) + 
   geom_histogram()
